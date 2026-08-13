@@ -2,107 +2,2225 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>StyleName - Stylish Name Generator</title>
-<meta name="description" content="StyleName stylish name generator with 620+ patterns, font styles, emoji decorator, search, filters, favorites and sharing.">
-<meta name="keywords" content="stylish name generator, free fire names, facebook names, instagram names, tiktok names, font style generator">
-<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="StyleName - Create stylish names for Free Fire, Facebook, Instagram and TikTok. Generate, copy and save stylish names easily.">
 <meta name="theme-color" content="#1677ff">
-<meta property="og:title" content="StyleName - Stylish Name Generator">
-<meta property="og:description" content="Create 620+ stylish names for gaming and social media.">
-<meta property="og:type" content="website">
+
+<title>StyleName - Stylish Name Generator</title>
+
 <style>
-:root{--p:#1677ff;--bg:#f5f9ff;--c:#fff;--t:#172033;--m:#718096;--b:#dce6f2;--s:#eaf3ff;--sh:0 8px 28px #1e64b414}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,sans-serif;background:var(--bg);color:var(--t);transition:.3s}body.dark{--bg:#0b1220;--c:#111b2e;--t:#edf4ff;--m:#9aabc2;--b:#263754;--s:#142b4b;--sh:0 10px 30px #0005}
-button,input,select{font:inherit}button{cursor:pointer}header{height:62px;background:var(--c);border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:10}.logo{display:flex;align-items:center;gap:8px;color:var(--p);font-size:20px;font-weight:700}.logo i{width:34px;height:34px;border-radius:10px;background:var(--p);color:#fff;display:grid;place-items:center;font-style:normal}.ha{display:flex;gap:5px}.ib,.menu{border:0;background:transparent;color:var(--p);width:40px;height:40px;border-radius:10px;font-size:20px}.ib:hover,.menu:hover{background:var(--s)}
-.hero{text-align:center;padding:34px 15px 18px;animation:up .5s}.hero h1{font-size:30px}.hero h1 span{color:var(--p)}.hero p{color:var(--m);font-size:13px;line-height:1.6;margin-top:7px}
-.box,.showcase,.feature,.about,.libcard{background:var(--c);box-shadow:var(--sh)}.showcase,.generator,.container,.features,.about{width:94%;max-width:720px;margin-left:auto;margin-right:auto}.showcase{padding:18px;border-radius:18px;text-align:center}.trend{font-size:11px;color:var(--m)}#autoName{font-size:21px;font-weight:700;color:var(--p);margin-top:5px;min-height:29px}.cattext{font-size:11px;color:var(--m)}
-.cats{width:94%;max-width:720px;margin:14px auto;display:flex;gap:7px;overflow:auto;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}.cat{white-space:nowrap;border:1px solid var(--b);background:var(--c);color:var(--m);padding:9px 13px;border-radius:20px;font-size:12px;font-weight:700}.cat.active{background:var(--p);color:#fff;border-color:var(--p)}
-.generator{padding:18px;border-radius:18px}.generator h2{text-align:center;font-size:18px;margin-bottom:13px}input,select{width:100%;padding:12px;border:1px solid var(--b);border-radius:10px;background:var(--c);color:var(--t);outline:0}input:focus,select:focus{border-color:var(--p)}.row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.btn{border:0;padding:12px;border-radius:10px;font-weight:700}.primary{background:var(--p);color:#fff}.soft{background:var(--s);color:var(--p)}.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:7px}.mini .btn{font-size:11px;background:#eef2f7;color:#475569}.dark .mini .btn{background:#1a2941;color:#dbe7f8}
-.tools{display:grid;gap:8px;margin-top:10px}.tool{border:1px solid var(--b);border-radius:12px;padding:11px}.tool h3{font-size:13px;margin-bottom:7px}.tool p{font-size:10px;color:var(--m);margin-bottom:7px;line-height:1.5}.out{margin-top:7px;padding:9px;border:1px dashed var(--b);border-radius:9px;line-height:1.7;word-break:break-word;font-size:13px}.emojis{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.emojis button{border:1px solid var(--b);background:var(--c);border-radius:8px;padding:5px 7px}.filter{display:none;margin-top:8px;padding:10px;border:1px solid var(--b);border-radius:11px}.filter.show{display:block}.filtergrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}.label{font-size:10px;color:var(--m);display:block;margin-bottom:4px}
-.resulthead{display:none;justify-content:space-between;align-items:center;margin:17px 0 8px}.resulthead.show{display:flex}.resulthead b{font-size:15px}.resulthead small{color:var(--m)}#results .title{font-size:14px;font-weight:700;margin:8px 0}.namebox{background:var(--c);padding:11px;border-radius:11px;margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid transparent;box-shadow:var(--sh);animation:up .2s}.namebox:hover{border-color:var(--b)}.name{font-size:15px;line-height:1.5;word-break:break-word}.actions{display:flex;gap:4px;flex-shrink:0}.actions button{border:0;border-radius:7px;padding:7px 8px;font-size:11px;font-weight:700}.copy{background:var(--s);color:var(--p)}.fav{background:#fff0f3;color:#ff4b6e;font-size:15px!important}.fav.saved{background:#ff4b6e;color:#fff}.share{background:#eefbf3;color:#14804a}.empty,.noresult{text-align:center;background:var(--c);padding:24px;border-radius:12px;color:var(--m);font-size:13px}.noresult{display:none}
-.lib{margin-top:24px}.libhead{display:flex;justify-content:space-between;margin-bottom:9px}.libhead h2{font-size:17px}.libhead small{color:var(--m)}.libgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.libcard{padding:14px;border-radius:12px;border:1px solid var(--b);cursor:pointer}.libcard b{font-size:13px;display:block;margin-bottom:5px}.libcard small{color:var(--m);font-size:10px}
-.favorites{display:none;margin-top:24px}.favorites.show{display:block}.favhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.favhead h2{font-size:17px}.clear{border:0;background:var(--s);color:var(--t);padding:7px 10px;border-radius:7px;font-size:10px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:42px;margin-bottom:35px}.feature{padding:16px 6px;border-radius:13px;text-align:center}.feature i{font-size:23px;font-style:normal}.feature h3{font-size:12px;margin:6px 0 4px}.feature p{font-size:10px;color:var(--m)}
-.about{padding:20px;border-radius:15px;text-align:center;margin-bottom:40px}.about h2{color:var(--p);font-size:20px;margin-bottom:7px}.about p{font-size:12px;color:var(--m);line-height:1.7}footer{background:var(--c);border-top:1px solid var(--b);padding:25px;text-align:center;color:var(--m);font-size:11px}.flogo{color:var(--p);font-size:18px;font-weight:700;margin-bottom:5px}
-.side{position:fixed;right:-300px;top:0;width:285px;height:100%;background:var(--c);z-index:30;padding:18px;transition:.3s;box-shadow:-8px 0 30px #0002;overflow:auto}.side.open{right:0}.overlay{position:fixed;inset:0;background:#0007;z-index:20;display:none}.overlay.show{display:block}.sidehead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--b);padding-bottom:15px}.sidehead b{color:var(--p)}.close{border:0;background:var(--s);color:var(--t);width:34px;height:34px;border-radius:9px;font-size:20px}.menuitem{width:100%;border:0;background:transparent;color:var(--t);padding:12px;text-align:left;border-radius:10px;font-weight:700;margin-top:4px}.menuitem:hover{background:var(--s);color:var(--p)}
-.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#172033;color:#fff;padding:10px 17px;border-radius:25px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
-.install{display:none;position:fixed;left:10px;right:10px;bottom:10px;background:var(--c);border:1px solid var(--b);box-shadow:0 10px 30px #0003;padding:10px;border-radius:13px;z-index:40;gap:7px;align-items:center}.install.show{display:flex}.install span{flex:1;font-size:11px}.install button{border:0;background:var(--p);color:#fff;padding:7px 9px;border-radius:8px;font-size:10px}
-@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes pulse{50%{transform:scale(1.03)}}
-@media(max-width:650px){.features{gap:5px}.feature{padding:13px 4px}.filtergrid{grid-template-columns:1fr 1fr}.name{font-size:14px}.actions .share{display:none}}
-@media(max-width:390px){.filtergrid{grid-template-columns:1fr}.mini{grid-template-columns:1fr 1fr}}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f9ff;
+    color:#172033;
+}
+
+header{
+    height:62px;
+    background:#fff;
+    border-bottom:1px solid #e5edf7;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#1677ff;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo-icon{
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    background:#1677ff;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    color:#1677ff;
+    font-size:23px;
+    cursor:pointer;
+}
+
+/* SIDE MENU */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.4);
+    opacity:0;
+    visibility:hidden;
+    z-index:2000;
+    transition:.3s;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.side-menu{
+    position:fixed;
+    top:0;
+    right:-300px;
+    width:285px;
+    height:100%;
+    background:#fff;
+    z-index:2100;
+    padding:20px;
+    transition:.35s;
+    overflow-y:auto;
+    box-shadow:-8px 0 30px rgba(0,0,0,.12);
+}
+
+.side-menu.open{
+    right:0;
+}
+
+.menu-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:18px;
+    border-bottom:1px solid #edf2f7;
+}
+
+.menu-logo{
+    color:#1677ff;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.close-menu{
+    width:34px;
+    height:34px;
+    background:#f1f5f9;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.menu-title{
+    color:#94a3b8;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin:20px 5px 8px;
+}
+
+.menu-item{
+    width:100%;
+    border:0;
+    background:white;
+    padding:12px;
+    border-radius:11px;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    text-align:left;
+    font-size:13px;
+    font-weight:bold;
+    color:#475569;
+    cursor:pointer;
+    margin-bottom:5px;
+}
+
+.menu-item:hover{
+    background:#eaf3ff;
+    color:#1677ff;
+}
+
+.menu-icon{
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    background:#f1f5f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:35px 15px 20px;
+}
+
+.hero h1{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.hero h1 span{
+    color:#1677ff;
+}
+
+.hero p{
+    color:#718096;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* TRENDING */
+
+.showcase{
+    width:94%;
+    max-width:620px;
+    margin:auto;
+    padding:20px 15px;
+    background:#fff;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(30,100,180,.07);
+}
+
+.trending{
+    color:#94a3b8;
+    font-size:11px;
+    margin-bottom:8px;
+}
+
+.auto-name{
+    color:#1677ff;
+    font-size:20px;
+    font-weight:bold;
+    min-height:28px;
+}
+
+.auto-category{
+    color:#94a3b8;
+    font-size:11px;
+    margin-top:7px;
+}
+
+/* CATEGORY */
+
+.categories{
+    width:94%;
+    max-width:620px;
+    margin:15px auto;
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.categories::-webkit-scrollbar{
+    display:none;
+}
+
+.category{
+    white-space:nowrap;
+    border:1px solid #dce6f2;
+    background:#fff;
+    padding:8px 13px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    color:#64748b;
+    cursor:pointer;
+}
+
+.category.active{
+    background:#1677ff;
+    color:#fff;
+    border-color:#1677ff;
+}
+
+/* CONTAINER */
+
+.container{
+    width:94%;
+    max-width:620px;
+    margin:15px auto;
+}
+
+.generator{
+    background:#fff;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(30,100,180,.07);
+}
+
+.generator h2{
+    text-align:center;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #dce5f0;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+}
+
+input:focus{
+    border-color:#1677ff;
+}
+
+.button-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:10px;
+}
+
+.generate,
+.random-btn{
+    border:0;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.generate{
+    background:#1677ff;
+    color:white;
+}
+
+.random-btn{
+    background:#eaf3ff;
+    color:#1677ff;
+}
+
+.extra-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:7px;
+    margin-top:8px;
+}
+
+.extra-btn{
+    border:0;
+    padding:10px 5px;
+    border-radius:9px;
+    background:#f1f5f9;
+    color:#475569;
+    font-size:11px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.search-box{
+    margin-top:10px;
+}
+
+/* RESULTS */
+
+.result-header{
+    display:none;
+    align-items:center;
+    justify-content:space-between;
+    margin:18px 0 10px;
+}
+
+.result-header.show{
+    display:flex;
+}
+
+.result-title{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.result-count{
+    font-size:11px;
+    color:#94a3b8;
+}
+
+.section-title{
+    font-size:15px;
+    font-weight:bold;
+    margin:16px 0 9px;
+}
+
+.name-box{
+    background:#fff;
+    padding:12px;
+    border-radius:11px;
+    margin-bottom:7px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    box-shadow:0 3px 12px rgba(30,100,180,.06);
+    animation:cardIn .25s ease;
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(7px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.name{
+    font-size:16px;
+    line-height:1.5;
+    word-break:break-word;
+}
+
+.name-actions{
+    display:flex;
+    gap:5px;
+    flex-shrink:0;
+}
+
+.copy,
+.favorite{
+    border:0;
+    padding:7px 9px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.copy{
+    background:#eaf3ff;
+    color:#1677ff;
+}
+
+.favorite{
+    background:#fff0f3;
+    color:#ff4b6e;
+    font-size:15px;
+}
+
+.favorite.saved{
+    background:#ff4b6e;
+    color:white;
+}
+
+.empty,
+.no-result{
+    text-align:center;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    color:#94a3b8;
+    font-size:13px;
+}
+
+.no-result{
+    display:none;
+}
+
+/* LIBRARY */
+
+.library{
+    margin-top:25px;
+}
+
+.library-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.library-head h2{
+    font-size:17px;
+}
+
+.library-head span{
+    font-size:10px;
+    color:#94a3b8;
+}
+
+.library-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.library-card{
+    background:#fff;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    border:1px solid #edf2f7;
+    transition:.2s;
+}
+
+.library-card:hover{
+    border-color:#1677ff;
+    transform:translateY(-2px);
+}
+
+.library-card strong{
+    display:block;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.library-card small{
+    color:#94a3b8;
+    font-size:10px;
+}
+
+/* FAVORITES */
+
+.favorites{
+    display:none;
+    margin-top:25px;
+}
+
+.favorites.show{
+    display:block;
+}
+
+.favorite-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.favorite-head h2{
+    font-size:17px;
+}
+
+.clear-favorites{
+    border:0;
+    background:#f1f5f9;
+    padding:7px 10px;
+    border-radius:7px;
+    font-size:10px;
+    cursor:pointer;
+}
+
+/* FEATURES */
+
+.features{
+    width:94%;
+    max-width:700px;
+    margin:45px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.feature{
+    background:#fff;
+    padding:18px 8px;
+    border-radius:14px;
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.feature h3{
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.feature p{
+    font-size:10px;
+    color:#718096;
+}
+
+/* ABOUT */
+
+.about{
+    width:94%;
+    max-width:650px;
+    margin:0 auto 45px;
+    background:#fff;
+    padding:22px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.about h2{
+    color:#1677ff;
+    font-size:20px;
+    margin-bottom:9px;
+}
+
+.about p{
+    color:#64748b;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    background:#fff;
+    border-top:1px solid #e5edf7;
+    padding:28px 15px;
+    text-align:center;
+    color:#94a3b8;
+    font-size:11px;
+}
+
+.footer-logo{
+    color:#1677ff;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,20px);
+    background:#172033;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:25px;
+    font-size:12px;
+    opacity:0;
+    transition:.3s;
+    z-index:3000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .name{
+        font-size:15px;
+    }
+
+    .features{
+        gap:6px;
+    }
+
+    .feature{
+        padding:14px 5px;
+    }
+}
 </style>
 </head>
+
 <body>
-<header><div class="logo"><i>S</i>StyleName</div><div class="ha"><button class="ib" id="theme" onclick="theme()">🌙</button><button class="menu" onclick="openMenu()">☰</button></div></header>
+
+<header>
+
+<div class="logo">
+<div class="logo-icon">S</div>
+StyleName
+</div>
+
+<div class="menu" onclick="openMenu()">☰</div>
+
+</header>
+
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
-<aside class="side" id="side"><div class="sidehead"><b>StyleName</b><button class="close" onclick="closeMenu()">×</button></div>
-<button class="menuitem" onclick="home()">🏠 Home</button><button class="menuitem" onclick="pick('freefire')">🎮 Free Fire</button><button class="menuitem" onclick="pick('facebook')">📘 Facebook</button><button class="menuitem" onclick="pick('instagram')">📸 Instagram</button><button class="menuitem" onclick="pick('tiktok')">🎵 TikTok</button><button class="menuitem" onclick="showFav()">❤️ My Favorites</button><button class="menuitem" onclick="about()">ℹ️ About</button><button class="menuitem" onclick="shareSite()">🔗 Share StyleName</button>
-</aside>
-<section class="hero" id="home"><h1>Stylish <span>Name</span> Generator</h1><p>Create unique stylish names, fonts and decorated names for gaming and social media.</p></section>
-<div class="showcase"><div class="trend">✨ TRENDING STYLISH NAME</div><div id="autoName">꧁༺ Dark King ༻꧂</div><div class="cattext" id="autoCat">🎮 Free Fire</div></div>
-<div class="cats"><button class="cat active" onclick="cat('all',this)">✨ All</button><button class="cat" onclick="cat('freefire',this)">🎮 Free Fire</button><button class="cat" onclick="cat('facebook',this)">📘 Facebook</button><button class="cat" onclick="cat('instagram',this)">📸 Instagram</button><button class="cat" onclick="cat('tiktok',this)">🎵 TikTok</button></div>
-<main class="container">
-<div class="generator"><h2>✨ Name Generator</h2><input id="nameInput" placeholder="Enter your name..." autocomplete="off">
-<div class="row"><button class="btn primary" onclick="generate()">✨ Generate</button><button class="btn soft" onclick="randomName()">🎲 Random</button></div>
-<div class="mini"><button class="btn" onclick="more()">➕ More</button><button class="btn" onclick="copyAll()">📋 Copy All</button><button class="btn" onclick="clearResults()">🗑 Clear</button><button class="btn" onclick="toggleFilter()">🔎 Filter</button></div>
-<input id="search" style="margin-top:8px" placeholder="🔍 Search generated styles..." oninput="search()">
-<div class="tools">
-<div class="tool"><h3>🔤 Font Style Generator</h3><input id="font" placeholder="Type text..." oninput="fonts()"><div class="out" id="fontout">Type something to see font styles.</div></div>
-<div class="tool"><h3>😀 Name Decorator / Emoji Tools</h3><div class="row"><input id="decor" placeholder="Your name"><button class="btn primary" onclick="decorate()">Decorate</button></div><div class="emojis" id="emojis"></div><div class="out" id="decorout">Choose an emoji or decorate your name.</div></div>
-<div class="tool"><h3>🔎 Advanced Search + Filter</h3><p>Filter category, sort results and choose how many styles to show.</p><button class="btn soft" onclick="toggleFilter()">Open Filter</button><div class="filter" id="filter"><div class="filtergrid"><div><label class="label">Category</label><select id="fcat" onchange="applyFilter()"><option>all</option><option>freefire</option><option>facebook</option><option>instagram</option><option>tiktok</option></select></div><div><label class="label">Sort</label><select id="sort" onchange="applyFilter()"><option value="default">Default</option><option value="az">A → Z</option><option value="za">Z → A</option><option value="short">Shortest</option><option value="long">Longest</option></select></div><div><label class="label">Limit</label><select id="limit" onchange="applyFilter()"><option>20</option><option>40</option><option>80</option><option>120</option><option>200</option></select></div></div></div></div>
-<div class="tool"><h3>🔗 Share</h3><p>Share the current name or StyleName.</p><button class="btn soft" onclick="shareCurrent()">Share Current Name</button> <button class="btn soft" onclick="shareSite()">Share Site</button></div>
-</div></div>
-<div class="resulthead" id="rh"><b id="rt">✨ Stylish Names</b><small id="rc">0 styles</small></div><div id="results"><div class="empty">✨ Enter your name and Generate</div></div><div class="noresult" id="no">😔 No matching style found.</div>
-<section class="lib"><div class="libhead"><h2>🎨 Style Library</h2><small id="count">620+ styles</small></div><div class="libgrid"><div class="libcard" onclick="pick('freefire')"><b>🎮 Free Fire</b><small>Gaming names</small></div><div class="libcard" onclick="pick('facebook')"><b>📘 Facebook</b><small>Profile names</small></div><div class="libcard" onclick="pick('instagram')"><b>📸 Instagram</b><small>Profile names</small></div><div class="libcard" onclick="pick('tiktok')"><b>🎵 TikTok</b><small>Creator names</small></div></div></section>
-<section class="favorites" id="favorites"><div class="favhead"><h2>❤️ Favorites</h2><button class="clear" onclick="clearFav()">Clear All</button></div><div id="favlist"></div></section>
-</main>
-<section class="features"><div class="feature"><i>⚡</i><h3>Fast</h3><p>Instant generation</p></div><div class="feature"><i>🎨</i><h3>620+</h3><p>Patterns</p></div><div class="feature"><i>❤️</i><h3>Favorites</h3><p>Save locally</p></div><div class="feature"><i>🔤</i><h3>Fonts</h3><p>Unicode styles</p></div><div class="feature"><i>🔎</i><h3>Search</h3><p>Advanced filter</p></div><div class="feature"><i>📱</i><h3>Mobile</h3><p>Responsive</p></div></section>
-<section class="about" id="about"><h2>About StyleName</h2><p>Create stylish names for Free Fire, Facebook, Instagram and TikTok. Generate 620+ patterns, transform text into font styles, decorate names with emojis and symbols, copy, save favorites, search, sort, use dark mode and share.</p></section>
-<div class="toast" id="toast"></div><div class="install" id="install"><span>📱 Add StyleName to your home screen.</span><button onclick="install()">Install</button><button onclick="this.parentElement.classList.remove('show')">×</button></div>
-<footer><div class="flogo">StyleName</div>Stylish names made simple.<br><br>© 2026 StyleName</footer>
+
+<div class="side-menu" id="sideMenu">
+
+<div class="menu-head">
+<div class="menu-logo">StyleName</div>
+<div class="close-menu" onclick="closeMenu()">×</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<button class="menu-item" onclick="goHome()">
+<div class="menu-icon">🏠</div>
+Home
+</button>
+
+<button class="menu-item" onclick="chooseCategory('freefire')">
+<div class="menu-icon">🎮</div>
+Free Fire Names
+</button>
+
+<button class="menu-item" onclick="chooseCategory('facebook')">
+<div class="menu-icon">📘</div>
+Facebook Names
+</button>
+
+<button class="menu-item" onclick="chooseCategory('instagram')">
+<div class="menu-icon">📸</div>
+Instagram Names
+</button>
+
+<button class="menu-item" onclick="chooseCategory('tiktok')">
+<div class="menu-icon">🎵</div>
+TikTok Names
+</button>
+
+<button class="menu-item" onclick="showFavoriteMenu()">
+<div class="menu-icon">❤️</div>
+My Favorites
+</button>
+
+<button class="menu-item" onclick="showAbout()">
+<div class="menu-icon">ℹ️</div>
+About StyleName
+</button>
+
+</div>
+
+<section class="hero" id="home">
+
+<h1>
+Stylish <span>Name</span>
+</h1>
+
+<p>
+Create unique stylish names for gaming
+and social media.
+</p>
+
+</section>
+
+<div class="showcase">
+
+<div class="trending">
+✨ TRENDING STYLISH NAME
+</div>
+
+<div class="auto-name" id="autoName">
+꧁༺ Dark King ༻꧂
+</div>
+
+<div class="auto-category" id="autoCategory">
+🎮 Free Fire
+</div>
+
+</div>
+
+<div class="categories">
+
+<button class="category active"
+onclick="changeCategory('all',this)">
+✨ All
+</button>
+
+<button class="category"
+onclick="changeCategory('freefire',this)">
+🎮 Free Fire
+</button>
+
+<button class="category"
+onclick="changeCategory('facebook',this)">
+📘 Facebook
+</button>
+
+<button class="category"
+onclick="changeCategory('instagram',this)">
+📸 Instagram
+</button>
+
+<button class="category"
+onclick="changeCategory('tiktok',this)">
+🎵 TikTok
+</button>
+
+</div>
+
+<div class="container">
+
+<div class="generator">
+
+<h2>✨ Name Generator</h2>
+
+<input
+id="nameInput"
+placeholder="Enter your name..."
+maxlength="50"
+autocomplete="off"
+>
+
+<div class="button-row">
+
+<button class="generate" onclick="generate()">
+✨ Generate
+</button>
+
+<button class="random-btn" onclick="randomName()">
+🎲 Random
+</button>
+
+</div>
+
+<div class="extra-buttons">
+
+<button class="extra-btn" onclick="moreStyles()">
+➕ More
+</button>
+
+<button class="extra-btn" onclick="copyAll()">
+📋 Copy All
+</button>
+
+<button class="extra-btn" onclick="clearResults()">
+🗑 Clear
+</button>
+
+</div>
+
+<div class="search-box">
+
+<input
+id="searchInput"
+placeholder="🔍 Search styles..."
+oninput="searchNames()"
+>
+
+</div>
+
+</div>
+
+<div class="result-header" id="resultHeader">
+
+<div class="result-title" id="resultTitle">
+✨ Stylish Names
+</div>
+
+<div class="result-count" id="resultCount">
+0 styles
+</div>
+
+</div>
+
+<div id="results">
+
+<div class="empty">
+✨ Enter your name and Generate
+</div>
+
+</div>
+
+<div class="no-result" id="noResult">
+😔 No matching style found.
+</div>
+
+<div class="library">
+
+<div class="library-head">
+<h2>🎨 Style Library</h2>
+<span>200+ styles</span>
+</div>
+
+<div class="library-grid">
+
+<div class="library-card"
+onclick="libraryCategory('freefire')">
+
+<strong>🎮 Free Fire</strong>
+<small>Stylish gaming names</small>
+
+</div>
+
+<div class="library-card"
+onclick="libraryCategory('facebook')">
+
+<strong>📘 Facebook</strong>
+<small>Stylish profile names</small>
+
+</div>
+
+<div class="library-card"
+onclick="libraryCategory('instagram')">
+
+<strong>📸 Instagram</strong>
+<small>Stylish profile names</small>
+
+</div>
+
+<div class="library-card"
+onclick="libraryCategory('tiktok')">
+
+<strong>🎵 TikTok</strong>
+<small>Stylish profile names</small>
+
+</div>
+
+</div>
+</div>
+
+<div class="favorites" id="favoritesSection">
+
+<div class="favorite-head">
+
+<h2>❤️ Favorites</h2>
+
+<button class="clear-favorites"
+onclick="clearFavorites()">
+Clear All
+</button>
+
+</div>
+
+<div id="favoriteList"></div>
+
+</div>
+
+</div>
+
+<section class="features">
+
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>Fast</h3>
+<p>Instant</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">📋</div>
+<h3>Copy</h3>
+<p>One Tap</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">❤️</div>
+<h3>Favorite</h3>
+<p>Save</p>
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About StyleName</h2>
+
+<p>
+Create stylish names for Free Fire,
+Facebook, Instagram and TikTok.
+Copy and save your favorite names easily.
+</p>
+
+</section>
+
+<div class="toast" id="toast">
+Done ✓
+</div>
+
+<footer>
+
+<div class="footer-logo">
+StyleName
+</div>
+
+Stylish names made simple.
+
+<br><br>
+
+© 2026 StyleName
+
+</footer>
+
 <script>
-const base=["꧁༺ {NAME} ༻꧂","꧁༒☬ {NAME} ☬༒꧂","『ツ』{NAME}『ツ』","『亗』{NAME}『亗』","『乂』{NAME}『乂』","★彡[ {NAME} ]彡★","乂❤︎ {NAME} ❤︎乂","亗『 {NAME} 』亗","༒☬ {NAME} ☬༒","♛༺ {NAME} ༻♛","⚡༺ {NAME} ༻⚡","🔥༺ {NAME} ༻🔥","☠༺ {NAME} ༻☠","👑༺ {NAME} ༻👑","♡༺ {NAME} ༻♡","✦༺ {NAME} ༻✦","❖༺ {NAME} ༻❖","☾༺ {NAME} ༻☽","❀༺ {NAME} ༻❀","🦋༺ {NAME} ༻🦋","✨༺ {NAME} ༻✨","꧁ {NAME} ꧂","亗 {NAME} 亗","ツ {NAME} ツ","シ {NAME} シ","༒ {NAME} ༒","♛ {NAME} ♛","✦ {NAME} ✦","♡ {NAME} ♡","☠ {NAME} ☠","⚔ {NAME} ⚔","〆 {NAME} 〆","࿐ {NAME} ࿐","❖ {NAME} ❖","✧ {NAME} ✧","☆ {NAME} ☆","★ {NAME} ★","♕ {NAME} ♕","♔ {NAME} ♔","⚡ {NAME} ⚡","🔥 {NAME} 🔥","🌙 {NAME} 🌙","❀ {NAME} ❀","𖤐 {NAME} 𖤐"];
-const L=["꧁","༺","『","亗","乂","メ","〆","࿐","★彡","✦","❖","♛","♚","⚡","🔥","☠","👑","♡","☾","❀","🦋","🌙","✨","ツ","シ","么","ঔৣ","𓆩","𖤐"],R=["꧂","༻","』","亗","乂","メ","〆","࿐","彡★","✦","❖","♛","♚","⚡","🔥","☠","👑","♡","☽","❀","🦋","🌙","✨","ツ","シ","么","ঔৣ","𓆪","𖤐"],M=["","✦","★"];
-let patterns=[...base];for(let a of L)for(let b of R)for(let m of M){if(patterns.length>=620)break;let x=`${a} ${m} {NAME} ${m} ${b}`.replace(/  /g," ");if(!patterns.includes(x))patterns.push(x)}if(patterns.length<620)patterns=[...patterns,...base,...patterns];patterns=[...new Set(patterns)].slice(0,620);
-const names=["Shadow","Dark King","Silent Boy","Crazy Boy","Dark Angel","Night King","Royal Boy","Legend","Bad Boy","Alone Boy","Mr Perfect","Devil King","Ghost Rider","Fire King","Black Wolf","King","Silent Killer","Dark Rider","Pro Player","Dark Knight","Royal King","Crazy King","Cool Boy","Dark Prince","Gaming King","Alpha Boy","Night Rider","Boss","Legend King"];
-const trends=[["꧁༺ Dark King ༻꧂","🎮 Free Fire"],["『 Viral King 』","📘 Facebook"],["𓆩 Dream Boy 𓆪","📸 Instagram"],["★彡 Crazy Boy 彡★","🎵 TikTok"],["亗 Shadow 亗","🎮 Free Fire"],["♡ Alone Boy ♡","📘 Facebook"],["𓆩 Night King 𓆪","📸 Instagram"],["🔥 Devil King 🔥","🎵 TikTok"]];
-const styles={all:patterns,freefire:patterns.slice(0,520),facebook:patterns.slice(40,570),instagram:patterns.slice(90),tiktok:patterns.slice(20)};
-let current="all",limit=20,favs=JSON.parse(localStorage.getItem("stylenameFavorites")||"[]"),decoEmoji="✨",installEvent=null;
-const $=x=>document.getElementById(x),esc=x=>String(x).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-function toast(x){$("toast").innerText=x;$("toast").classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>$("toast").classList.remove("show"),1600)}
-function openMenu(){$("side").classList.add("open");$("overlay").classList.add("show")}function closeMenu(){$("side").classList.remove("open");$("overlay").classList.remove("show")}function home(){closeMenu();scrollTo({top:0,behavior:"smooth"})}function about(){closeMenu();$("about").scrollIntoView({behavior:"smooth"})}
-function setCat(c){current=c;$("fcat").value=c;document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("active",b.innerText.toLowerCase().includes(c==="all"?"all":c)))}
-function cat(c,b){setCat(c);if($("nameInput").value.trim())generate()}function pick(c){setCat(c);let n=$("nameInput").value.trim()||names[Math.floor(Math.random()*names.length)];$("nameInput").value=n;generate();closeMenu()}
-function generate(){let n=$("nameInput").value.trim();if(!n){toast("আগে নাম লিখুন!");return}limit=+$("limit").value||20;render(n)}
-function render(n){$("rh").classList.add("show");$("rt").innerText="✨ "+(current==="all"?"All":current[0].toUpperCase()+current.slice(1))+" Stylish Names";let q=$("search").value.toLowerCase().trim(),arr=styles[current].map(x=>x.replaceAll("{NAME}",n));if(q)arr=arr.filter(x=>x.toLowerCase().includes(q));$("results").innerHTML='<div class="title">✨ Stylish Styles</div>';arr.slice(0,limit).forEach(add);$("rc").innerText=Math.min(limit,arr.length)+" styles";$("no").style.display=arr.length?"none":"block"}
-function add(text){let d=document.createElement("div");d.className="namebox";d.dataset.name=text.toLowerCase();let s=favs.includes(text);d.innerHTML=`<span class="name">${esc(text)}</span><div class="actions"><button class="fav ${s?"saved":""}">${s?"♥":"♡"}</button><button class="copy">Copy</button><button class="share">Share</button></div>`;d.querySelector(".copy").onclick=function(){copy(text,this)};d.querySelector(".fav").onclick=function(){fav(text,this)};d.querySelector(".share").onclick=()=>share(text);$("results").appendChild(d)}
-function copy(t,b){let ok=()=>{if(b){let o=b.innerText;b.innerText="Copied ✓";setTimeout(()=>b.innerText=o,900)}toast("Name copied!")};if(navigator.clipboard&&isSecureContext)navigator.clipboard.writeText(t).then(ok).catch(()=>{fallback(t);ok()});else{fallback(t);ok()}}
-function fallback(t){let a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove()}
-function copyAll(){let a=[...document.querySelectorAll("#results .name")].map(x=>x.innerText);if(a.length)copy(a.join("\n"));else toast("কোনো নাম নেই!")}
-function clearResults(){$("results").innerHTML='<div class="empty">✨ Enter your name and Generate</div>';$("rh").classList.remove("show");$("no").style.display="none"}
-function randomName(){let n=names[Math.floor(Math.random()*names.length)];$("nameInput").value=n;render(n)}
-function more(){if(!$("nameInput").value.trim()){toast("আগে নাম লিখুন!");return}limit=Math.min(limit+20,styles[current].length);$("limit").value=[20,40,80,120,200].find(x=>x>=limit)||200;render($("nameInput").value.trim())}
-function search(){if($("nameInput").value.trim())render($("nameInput").value.trim())}
-function toggleFilter(){$("filter").classList.toggle("show")}
-function applyFilter(){current=$("fcat").value;limit=+$("limit").value;let n=$("nameInput").value.trim();if(!n){toast("নাম লিখে Generate করুন");return}let a=styles[current].map(x=>x.replaceAll("{NAME}",n)),q=$("search").value.toLowerCase().trim();if(q)a=a.filter(x=>x.toLowerCase().includes(q));let s=$("sort").value;if(s==="az")a.sort();if(s==="za")a.sort().reverse();if(s==="short")a.sort((a,b)=>a.length-b.length);if(s==="long")a.sort((a,b)=>b.length-a.length);$("results").innerHTML='<div class="title">✨ Filtered Stylish Styles</div>';a.slice(0,limit).forEach(add);$("rh").classList.add("show");$("rc").innerText=Math.min(limit,a.length)+" styles";$("no").style.display=a.length?"none":"block"}
-function fav(t,b){let i=favs.indexOf(t);if(i>=0){favs.splice(i,1);b.innerText="♡";b.classList.remove("saved");toast("Removed")}else{favs.push(t);b.innerText="♥";b.classList.add("saved");toast("Added ❤️")}localStorage.setItem("stylenameFavorites",JSON.stringify(favs));renderFav()}
-function renderFav(){let sec=$("favorites");if(!favs.length){sec.classList.remove("show");return}sec.classList.add("show");$("favlist").innerHTML="";favs.forEach(t=>{let d=document.createElement("div");d.className="namebox";d.innerHTML=`<span class="name">${esc(t)}</span><div class="actions"><button class="fav saved">♥</button><button class="copy">Copy</button></div>`;d.querySelector(".fav").onclick=function(){fav(t,this)};d.querySelector(".copy").onclick=function(){copy(t,this)};$("favlist").appendChild(d)})}
-function clearFav(){favs=[];localStorage.removeItem("stylenameFavorites");renderFav();toast("Favorites cleared")}function showFav(){closeMenu();renderFav();$("favorites").scrollIntoView({behavior:"smooth"})}
-const fmap=[["Bold","𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙"],["Italic","𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍"],["Double","𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ"],["Sans","𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹"]],ABC="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-function fonts(){let t=$("font").value.trim();if(!t){$("fontout").innerText="Type something to see font styles.";return}$("fontout").innerHTML=fmap.map(([n,m])=>`<div><b>${n}:</b> ${esc([...t].map(c=>{let i=ABC.indexOf(c.toUpperCase());return i>=0?m[i]:c}).join(""))}</div>`).join("")}
-const em=["👑","⚡","🔥","☠","❤️","🦋","✨","🌙","🌸","亗","♛","☬","༒","✦","❖","ツ"];$("emojis").innerHTML=em.map(e=>`<button onclick="decoEmoji='${e}';decorate()">${e}</button>`).join("");
-function decorate(){let n=$("decor").value.trim()||$("nameInput").value.trim();if(!n){toast("নাম লিখুন");return}$("decor").value=n;let x=`${decoEmoji}༺ ${n} ༻${decoEmoji}`;$("decorout").innerText=x;copy(x)}
-function share(t){if(navigator.share)navigator.share({title:"StyleName",text:t}).catch(()=>{});else copy(t)}
-function shareCurrent(){share($("nameInput").value.trim()||"StyleName")}function shareSite(){let d={title:"StyleName - Stylish Name Generator",text:"Create stylish names with StyleName",url:location.href};if(navigator.share)navigator.share(d).catch(()=>{});else copy(location.href)}
-function theme(){document.body.classList.toggle("dark");let d=document.body.classList.contains("dark");localStorage.setItem("theme",d?"dark":"light");$("theme").innerText=d?"☀️":"🌙"}
-if(localStorage.getItem("theme")==="dark")theme();
-let ti=0;setInterval(()=>{let x=trends[ti++%trends.length];$("autoName").innerText=x[0];$("autoCat").innerText=x[1];$("autoName").style.animation="none";void $("autoName").offsetWidth;$("autoName").style.animation="pulse .35s"},2200);
-$("nameInput").addEventListener("keydown",e=>{if(e.key==="Enter")generate()});
-window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEvent=e;$("install").classList.add("show")});
-function install(){if(installEvent){installEvent.prompt();installEvent.userChoice.finally(()=>{$("install").classList.remove("show");installEvent=null})}else toast("Browser menu থেকে Add to Home screen ব্যবহার করুন")}
-window.addEventListener("offline",()=>toast("🟠 Offline-friendly mode"));window.addEventListener("online",()=>toast("🟢 Back online"));
-renderFav();$("count").innerText=patterns.length+"+ styles";console.log("StyleName Steps 1-35 ready:",patterns.length+" patterns");
+
+/* =========================
+   STYLE DATABASE
+========================= */
+
+const styles={
+
+all:[],
+
+freefire:[],
+
+facebook:[],
+
+instagram:[],
+
+tiktok:[]
+
+};
+
+
+/* 200+ STYLE PATTERNS */
+
+const extraStyles=[
+
+"꧁༒☬ {NAME} ☬༒꧂",
+"꧁ঔৣ☬ {NAME} ☬ঔৣ꧂",
+"꧁༺♛ {NAME} ♛༻꧂",
+"༺𓆩 {NAME} 𓆪༻",
+"𓆩♡𓆪 {NAME} 𓆩♡𓆪",
+"𓆩⚡𓆪 {NAME} 𓆩⚡𓆪",
+"𓆩🔥𓆪 {NAME} 𓆩🔥𓆪",
+"𓆩👑𓆪 {NAME} 𓆩👑𓆪",
+"꧁𓊈𒆜 {NAME} 𒆜𓊉꧂",
+"꧁༒☬ {NAME} ☬༒꧂",
+
+"『ツ』{NAME}『ツ』",
+"『亗』{NAME}『亗』",
+"『乂』{NAME}『乂』",
+"『メ』{NAME}『メ』",
+"『〆』{NAME}『〆』",
+"『࿐』{NAME}『࿐』",
+"『☠』{NAME}『☠』",
+"『⚔』{NAME}『⚔』",
+"『♛』{NAME}『♛』",
+"『♚』{NAME}『♚』",
+
+"★彡[ {NAME} ]彡★",
+"★彡『 {NAME} 』彡★",
+"★彡༺ {NAME} ༻彡★",
+"★彡☠ {NAME} ☠彡★",
+"★彡⚡ {NAME} ⚡彡★",
+"★彡🔥 {NAME} 🔥彡★",
+"★彡👑 {NAME} 👑彡★",
+"★彡♛ {NAME} ♛彡★",
+"★彡亗 {NAME} 亗彡★",
+"★彡乂 {NAME} 乂彡★",
+
+"乂❤︎ {NAME} ❤︎乂",
+"乂⚡ {NAME} ⚡乂",
+"乂🔥 {NAME} 🔥乂",
+"乂☠ {NAME} ☠乂",
+"乂♛ {NAME} ♛乂",
+"乂👑 {NAME} 👑乂",
+"乂༒ {NAME} ༒乂",
+"乂✦ {NAME} ✦乂",
+"乂★ {NAME} ★乂",
+"乂❖ {NAME} ❖乂",
+
+"亗『 {NAME} 』亗",
+"亗༺ {NAME} ༻亗",
+"亗☬ {NAME} ☬亗",
+"亗⚡ {NAME} ⚡亗",
+"亗🔥 {NAME} 🔥亗",
+"亗☠ {NAME} ☠亗",
+"亗♛ {NAME} ♛亗",
+"亗👑 {NAME} 👑亗",
+"亗✦ {NAME} ✦亗",
+"亗❖ {NAME} ❖亗",
+
+"么★ {NAME} ★么",
+"么⚡ {NAME} ⚡么",
+"么🔥 {NAME} 🔥么",
+"么☠ {NAME} ☠么",
+"么♛ {NAME} ♛么",
+"么👑 {NAME} 👑么",
+"么༒ {NAME} ༒么",
+"么✦ {NAME} ✦么",
+"么❖ {NAME} ❖么",
+"么♡ {NAME} ♡么",
+
+"༒☬ {NAME} ☬༒",
+"༒⚡ {NAME} ⚡༒",
+"༒🔥 {NAME} 🔥༒",
+"༒☠ {NAME} ☠༒",
+"༒♛ {NAME} ♛༒",
+"༒👑 {NAME} 👑༒",
+"༒✦ {NAME} ✦༒",
+"༒★ {NAME} ★༒",
+"༒❖ {NAME} ❖༒",
+"༒♡ {NAME} ♡༒",
+
+"♛༺ {NAME} ༻♛",
+"♛『 {NAME} 』♛",
+"♛⚡ {NAME} ⚡♛",
+"♛🔥 {NAME} 🔥♛",
+"♛☠ {NAME} ☠♛",
+"♛👑 {NAME} 👑♛",
+"♛✦ {NAME} ✦♛",
+"♛★ {NAME} ★♛",
+"♛❖ {NAME} ❖♛",
+"♛♡ {NAME} ♡♛",
+
+"♚༺ {NAME} ༻♚",
+"♚『 {NAME} 』♚",
+"♚⚡ {NAME} ⚡♚",
+"♚🔥 {NAME} 🔥♚",
+"♚☠ {NAME} ☠♚",
+"♚👑 {NAME} 👑♚",
+"♚✦ {NAME} ✦♚",
+"♚★ {NAME} ★♚",
+"♚❖ {NAME} ❖♚",
+"♚♡ {NAME} ♡♚",
+
+"⚡༺ {NAME} ༻⚡",
+"⚡『 {NAME} 』⚡",
+"⚡☠ {NAME} ☠⚡",
+"⚡🔥 {NAME} 🔥⚡",
+"⚡👑 {NAME} 👑⚡",
+"⚡♛ {NAME} ♛⚡",
+"⚡✦ {NAME} ✦⚡",
+"⚡★ {NAME} ★⚡",
+"⚡❖ {NAME} ❖⚡",
+"⚡♡ {NAME} ♡⚡",
+
+"🔥༺ {NAME} ༻🔥",
+"🔥『 {NAME} 』🔥",
+"🔥☠ {NAME} ☠🔥",
+"🔥⚡ {NAME} ⚡🔥",
+"🔥👑 {NAME} 👑🔥",
+"🔥♛ {NAME} ♛🔥",
+"🔥✦ {NAME} ✦🔥",
+"🔥★ {NAME} ★🔥",
+"🔥❖ {NAME} ❖🔥",
+"🔥♡ {NAME} ♡🔥",
+
+"☠༺ {NAME} ༻☠",
+"☠『 {NAME} 』☠",
+"☠⚡ {NAME} ⚡☠",
+"☠🔥 {NAME} 🔥☠",
+"☠👑 {NAME} 👑☠",
+"☠♛ {NAME} ♛☠",
+"☠✦ {NAME} ✦☠",
+"☠★ {NAME} ★☠",
+"☠❖ {NAME} ❖☠",
+"☠♡ {NAME} ♡☠",
+
+"👑༺ {NAME} ༻👑",
+"👑『 {NAME} 』👑",
+"👑⚡ {NAME} ⚡👑",
+"👑🔥 {NAME} 🔥👑",
+"👑☠ {NAME} ☠👑",
+"👑♛ {NAME} ♛👑",
+"👑✦ {NAME} ✦👑",
+"👑★ {NAME} ★👑",
+"👑❖ {NAME} ❖👑",
+"👑♡ {NAME} ♡👑",
+
+"♡༺ {NAME} ༻♡",
+"♡『 {NAME} 』♡",
+"♡✦ {NAME} ✦♡",
+"♡★ {NAME} ★♡",
+"♡❖ {NAME} ❖♡",
+"♡☾ {NAME} ☽♡",
+"♡❀ {NAME} ❀♡",
+"♡🌸 {NAME} 🌸♡",
+"♡🦋 {NAME} 🦋♡",
+"♡✨ {NAME} ✨♡",
+
+"✦༺ {NAME} ༻✦",
+"✦『 {NAME} 』✦",
+"✦⚡ {NAME} ⚡✦",
+"✦🔥 {NAME} 🔥✦",
+"✦👑 {NAME} 👑✦",
+"✦♛ {NAME} ♛✦",
+"✦★ {NAME} ★✦",
+"✦❖ {NAME} ❖✦",
+"✦♡ {NAME} ♡✦",
+"✦🌙 {NAME} 🌙✦",
+
+"❖༺ {NAME} ༻❖",
+"❖『 {NAME} 』❖",
+"❖⚡ {NAME} ⚡❖",
+"❖🔥 {NAME} 🔥❖",
+"❖👑 {NAME} 👑❖",
+"❖♛ {NAME} ♛❖",
+"❖★ {NAME} ★❖",
+"❖✦ {NAME} ✦❖",
+"❖♡ {NAME} ♡❖",
+"❖🌙 {NAME} 🌙❖",
+
+"☾༺ {NAME} ༻☽",
+"☾『 {NAME} 』☽",
+"☾✦ {NAME} ✦☽",
+"☾★ {NAME} ★☽",
+"☾❖ {NAME} ❖☽",
+"☾♡ {NAME} ♡☽",
+"☾🌙 {NAME} 🌙☽",
+"☾✨ {NAME} ✨☽",
+"☾🦋 {NAME} 🦋☽",
+"☾🌸 {NAME} 🌸☽",
+
+"❀༺ {NAME} ༻❀",
+"❀『 {NAME} 』❀",
+"❀✦ {NAME} ✦❀",
+"❀★ {NAME} ★❀",
+"❀❖ {NAME} ❖❀",
+"❀♡ {NAME} ♡❀",
+"❀🌸 {NAME} 🌸❀",
+"❀🦋 {NAME} 🦋❀",
+"❀✨ {NAME} ✨❀",
+"❀🌷 {NAME} 🌷❀",
+
+"🦋༺ {NAME} ༻🦋",
+"🦋『 {NAME} 』🦋",
+"🦋✦ {NAME} ✦🦋",
+"🦋★ {NAME} ★🦋",
+"🦋❖ {NAME} ❖🦋",
+"🦋♡ {NAME} ♡🦋",
+"🦋✨ {NAME} ✨🦋",
+"🦋🌸 {NAME} 🌸🦋",
+"🦋🌙 {NAME} 🌙🦋",
+"🦋❀ {NAME} ❀🦋",
+
+"🌙༺ {NAME} ༻🌙",
+"🌙『 {NAME} 』🌙",
+"🌙✦ {NAME} ✦🌙",
+"🌙★ {NAME} ★🌙",
+"🌙❖ {NAME} ❖🌙",
+"🌙♡ {NAME} ♡🌙",
+"🌙✨ {NAME} ✨🌙",
+"🌙☁ {NAME} ☁🌙",
+"🌙🦋 {NAME} 🦋🌙",
+"🌙🌸 {NAME} 🌸🌙",
+
+"✨༺ {NAME} ༻✨",
+"✨『 {NAME} 』✨",
+"✨✦ {NAME} ✦✨",
+"✨★ {NAME} ★✨",
+"✨❖ {NAME} ❖✨",
+"✨♡ {NAME} ♡✨",
+"✨🌙 {NAME} 🌙✨",
+"✨🦋 {NAME} 🦋✨",
+"✨🌸 {NAME} 🌸✨",
+"✨👑 {NAME} 👑✨"
+
+];
+
+
+/* OLD BASIC STYLES */
+
+const basicStyles=[
+
+"꧁༺ {NAME} ༻꧂",
+"『 {NAME} 』",
+"亗 {NAME} 亗",
+"★彡 {NAME} 彡★",
+"乂 {NAME} 乂",
+"ツ {NAME} ツ",
+"シ {NAME} シ",
+"༒ {NAME} ༒",
+"♛ {NAME} ♛",
+"✦ {NAME} ✦",
+"♡ {NAME} ♡",
+"𓆩 {NAME} 𓆪",
+"ঔৣ {NAME} ঔৣ",
+"☠ {NAME} ☠",
+"⚔ {NAME} ⚔",
+"〆 {NAME} 〆",
+"么 {NAME} 么",
+"࿐ {NAME} ࿐",
+"❖ {NAME} ❖",
+"✧ {NAME} ✧",
+"☆ {NAME} ☆",
+"★ {NAME} ★",
+"♕ {NAME} ♕",
+"♔ {NAME} ♔",
+"⚡ {NAME} ⚡",
+"🔥 {NAME} 🔥",
+"🌙 {NAME} 🌙",
+"☁ {NAME} ☁",
+"❀ {NAME} ❀",
+"𖤐 {NAME} 𖤐"
+
+];
+
+
+/* CREATE CATEGORY DATABASE */
+
+styles.all=[
+    ...basicStyles,
+    ...extraStyles
+];
+
+styles.freefire=[
+    ...basicStyles,
+    ...extraStyles.slice(0,130)
+];
+
+styles.facebook=[
+    ...basicStyles,
+    ...extraStyles.slice(30,170)
+];
+
+styles.instagram=[
+    ...basicStyles,
+    ...extraStyles.slice(70)
+];
+
+styles.tiktok=[
+    ...basicStyles,
+    ...extraStyles.slice(20)
+];
+
+
+/* REMOVE DUPLICATES */
+
+Object.keys(styles).forEach(category=>{
+
+styles[category]=[
+    ...new Set(styles[category])
+];
+
+});
+
+
+/* RANDOM NAMES */
+
+const randomNames=[
+
+"Shadow",
+"Dark King",
+"Silent Boy",
+"Crazy Boy",
+"Dark Angel",
+"Night King",
+"Royal Boy",
+"Legend",
+"Bad Boy",
+"Alone Boy",
+"Mr Perfect",
+"Devil King",
+"Ghost Rider",
+"Fire King",
+"Black Wolf",
+"King",
+"Silent Killer",
+"Dark Rider",
+"Pro Player",
+"Legend Boy",
+"Dark Knight",
+"Royal King",
+"Crazy King",
+"Cool Boy",
+"Dark Prince",
+"Gaming King",
+"Alpha Boy",
+"Night Rider",
+"Boss",
+"Legend King"
+
+];
+
+
+let currentCategory="all";
+
+let styleLimit=20;
+
+let favorites=
+JSON.parse(
+localStorage.getItem("stylenameFavorites")
+)||[];
+
+
+/* MENU */
+
+function openMenu(){
+
+document
+.getElementById("sideMenu")
+.classList.add("open");
+
+document
+.getElementById("overlay")
+.classList.add("show");
+
+}
+
+function closeMenu(){
+
+document
+.getElementById("sideMenu")
+.classList.remove("open");
+
+document
+.getElementById("overlay")
+.classList.remove("show");
+
+}
+
+
+/* HOME */
+
+function goHome(){
+
+closeMenu();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* CATEGORY */
+
+function chooseCategory(category){
+
+closeMenu();
+
+setCategory(category);
+
+let name=
+document
+.getElementById("nameInput")
+.value
+.trim();
+
+if(!name){
+
+name=randomNames[
+Math.floor(
+Math.random()*randomNames.length
+)
+];
+
+document
+.getElementById("nameInput")
+.value=name;
+
+}
+
+generateForName(name);
+
+}
+
+
+function setCategory(category){
+
+currentCategory=category;
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+
+let text=
+btn.innerText
+.toLowerCase();
+
+if(
+(category==="all" && text.includes("all")) ||
+text.includes(category)
+){
+
+btn.classList.add("active");
+
+}
+
+});
+
+}
+
+
+/* LIBRARY */
+
+function libraryCategory(category){
+
+currentCategory=category;
+
+styleLimit=20;
+
+let name=
+document
+.getElementById("nameInput")
+.value
+.trim();
+
+if(!name){
+
+name=randomNames[
+Math.floor(
+Math.random()*randomNames.length
+)
+];
+
+document
+.getElementById("nameInput")
+.value=name;
+
+}
+
+generateForName(name);
+
+document
+.getElementById("nameInput")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+
+/* CATEGORY BUTTON */
+
+function changeCategory(category,button){
+
+currentCategory=category;
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+let name=
+document
+.getElementById("nameInput")
+.value
+.trim();
+
+if(name){
+
+styleLimit=20;
+
+generateForName(name);
+
+}
+
+}
+
+
+/* GENERATE */
+
+function generate(){
+
+let name=
+document
+.getElementById("nameInput")
+.value
+.trim();
+
+if(!name){
+
+showToast("আগে নাম লিখুন!");
+
+return;
+
+}
+
+styleLimit=20;
+
+generateForName(name);
+
+}
+
+
+/* GENERATE RESULTS */
+
+function generateForName(name){
+
+let results=
+document.getElementById("results");
+
+results.innerHTML="";
+
+document
+.getElementById("resultHeader")
+.classList.add("show");
+
+const titles={
+
+all:"✨ All Stylish Names",
+
+freefire:"🎮 Free Fire Names",
+
+facebook:"📘 Facebook Names",
+
+instagram:"📸 Instagram Names",
+
+tiktok:"🎵 TikTok Names"
+
+};
+
+document
+.getElementById("resultTitle")
+.innerText=
+titles[currentCategory];
+
+let list=
+styles[currentCategory];
+
+let limited=
+list.slice(0,styleLimit);
+
+createTitle(
+"✨ Stylish Styles"
+);
+
+limited.forEach(style=>{
+
+createName(
+style.replace(
+"{NAME}",
+name
+)
+);
+
+});
+
+updateCount();
+
+document
+.getElementById("searchInput")
+.value="";
+
+document
+.getElementById("noResult")
+.style.display="none";
+
+}
+
+
+/* MORE */
+
+function moreStyles(){
+
+let name=
+document
+.getElementById("nameInput")
+.value
+.trim();
+
+if(!name){
+
+showToast("আগে নাম লিখুন!");
+
+return;
+
+}
+
+let total=
+styles[currentCategory].length;
+
+if(styleLimit>=total){
+
+showToast(
+"🎉 সব styles দেখানো হচ্ছে!"
+);
+
+return;
+
+}
+
+styleLimit+=20;
+
+if(styleLimit>total){
+
+styleLimit=total;
+
+}
+
+generateForName(name);
+
+showToast(
+"➕ New styles added"
+);
+
+}
+
+
+/* CREATE TITLE */
+
+function createTitle(text){
+
+let title=
+document.createElement("div");
+
+title.className="section-title";
+
+title.innerText=text;
+
+document
+.getElementById("results")
+.appendChild(title);
+
+}
+
+
+/* CREATE NAME */
+
+function createName(text){
+
+let box=
+document.createElement("div");
+
+box.className="name-box";
+
+box.dataset.name=
+text.toLowerCase();
+
+let saved=
+favorites.includes(text);
+
+box.innerHTML=`
+
+<span class="name"></span>
+
+<div class="name-actions">
+
+<button class="favorite ${saved?"saved":""}" type="button" aria-label="${saved?"Remove from favorites":"Add to favorites"}">
+${saved?"♥":"♡"}
+</button>
+
+<button class="copy" type="button">
+Copy
+</button>
+
+</div>
+
+`;
+
+// Use textContent so user-entered names are treated as text, not HTML.
+box.querySelector(".name").textContent=text;
+
+box
+.querySelector(".copy")
+.onclick=async function(){
+
+const copied=await copyText(text);
+
+if(copied){
+this.innerText="Copied ✓";
+showToast("Name copied!");
+setTimeout(()=>{ this.innerText="Copy"; },1000);
+}else{
+showToast("Copy failed — please copy manually");
+}
+
+};
+
+
+box
+.querySelector(".favorite")
+.onclick=function(){
+
+toggleFavorite(
+text,
+this
+);
+
+};
+
+
+document
+.getElementById("results")
+.appendChild(box);
+
+}
+
+
+/* SEARCH */
+
+function searchNames(){
+
+let query=
+document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+let boxes=
+document.querySelectorAll(
+"#results .name-box"
+);
+
+let visible=0;
+
+boxes.forEach(box=>{
+
+if(
+box.dataset.name
+.includes(query)
+){
+
+box.style.display="flex";
+
+visible++;
+
+}else{
+
+box.style.display="none";
+
+}
+
+});
+
+document
+.getElementById("resultCount")
+.innerText=
+visible+" styles";
+
+document
+.getElementById("noResult")
+.style.display=
+visible===0
+?"block"
+:"none";
+
+}
+
+
+async function copyText(text){
+try{
+if(navigator.clipboard && window.isSecureContext){
+await navigator.clipboard.writeText(text);
+return true;
+}
+
+const textarea=document.createElement("textarea");
+textarea.value=text;
+textarea.setAttribute("readonly","");
+textarea.style.position="fixed";
+textarea.style.opacity="0";
+document.body.appendChild(textarea);
+textarea.select();
+const success=document.execCommand("copy");
+textarea.remove();
+return success;
+}catch(error){
+console.error("Copy failed:",error);
+return false;
+}
+}
+
+/* COPY ALL */
+
+function copyAll(){
+
+let names=
+document.querySelectorAll(
+"#results .name"
+);
+
+if(!names.length){
+
+showToast(
+"কোনো নাম নেই!"
+);
+
+return;
+
+}
+
+let text=[];
+
+names.forEach(name=>{
+
+if(
+name.parentElement.style.display
+!=="none"
+){
+
+text.push(
+name.innerText
+);
+
+}
+
+});
+
+copyText(text.join("\n"))
+.then(success=>{
+showToast(success ? "📋 All names copied!" : "Copy failed — please copy manually");
+});
+
+}
+
+
+/* CLEAR */
+
+function clearResults(){
+
+document
+.getElementById("results")
+.innerHTML=`
+
+<div class="empty">
+✨ Enter your name and Generate
+</div>
+
+`;
+
+document
+.getElementById("resultHeader")
+.classList.remove("show");
+
+document
+.getElementById("noResult")
+.style.display="none";
+
+}
+
+
+/* RANDOM */
+
+function randomName(){
+
+let name=
+randomNames[
+Math.floor(
+Math.random()*randomNames.length
+)
+];
+
+document
+.getElementById("nameInput")
+.value=name;
+
+styleLimit=20;
+
+generateForName(name);
+
+showToast(
+"🎲 "+name
+);
+
+}
+
+
+/* FAVORITES */
+
+function toggleFavorite(text,button){
+
+let index=
+favorites.indexOf(text);
+
+if(index>=0){
+
+favorites.splice(
+index,
+1
+);
+
+button.innerText="♡";
+button.setAttribute("aria-label","Add to favorites");
+
+button.classList.remove(
+"saved"
+);
+
+showToast(
+"Removed from favorites"
+);
+
+}else{
+
+favorites.push(text);
+
+button.innerText="♥";
+button.setAttribute("aria-label","Remove from favorites");
+
+button.classList.add(
+"saved"
+);
+
+showToast(
+"Added to favorites ❤️"
+);
+
+}
+
+localStorage.setItem(
+"stylenameFavorites",
+JSON.stringify(
+favorites
+)
+);
+
+renderFavorites();
+
+}
+
+
+function renderFavorites(){
+
+let section=
+document.getElementById(
+"favoritesSection"
+);
+
+let list=
+document.getElementById(
+"favoriteList"
+);
+
+if(!favorites.length){
+
+section.classList.remove(
+"show"
+);
+
+list.innerHTML="";
+
+return;
+
+}
+
+section.classList.add("show");
+
+list.innerHTML="";
+
+favorites.forEach(text=>{
+
+let box=
+document.createElement(
+"div"
+);
+
+box.className="name-box";
+
+box.innerHTML=`
+
+<span class="name"></span>
+
+<div class="name-actions">
+
+<button class="favorite saved" type="button" aria-label="Remove from favorites">
+♥
+</button>
+
+<button class="copy" type="button">
+Copy
+</button>
+
+</div>
+
+`;
+
+box.querySelector(".name").textContent=text;
+
+box
+.querySelector(".copy")
+.onclick=async function(){
+const copied=await copyText(text);
+showToast(copied ? "Name copied!" : "Copy failed — please copy manually");
+};
+
+box
+.querySelector(".favorite")
+.onclick=function(){
+
+toggleFavorite(
+text,
+this
+);
+
+};
+
+list.appendChild(box);
+
+});
+
+}
+
+
+function clearFavorites(){
+
+favorites=[];
+
+localStorage.removeItem(
+"stylenameFavorites"
+);
+
+renderFavorites();
+
+showToast(
+"Favorites cleared"
+);
+
+}
+
+
+function showFavoriteMenu(){
+
+closeMenu();
+
+document
+.getElementById(
+"favoritesSection"
+)
+.classList.add("show");
+
+document
+.getElementById(
+"favoritesSection"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function showAbout(){
+
+closeMenu();
+
+document
+.getElementById("about")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+let toast=
+document.getElementById(
+"toast"
+);
+
+toast.innerText=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove(
+"show"
+);
+
+},1600);
+
+}
+
+
+/* ENTER KEY */
+
+document
+.getElementById("nameInput")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter"){
+
+generate();
+
+}
+
+});
+
+
+/* TRENDING AUTO CHANGE */
+
+const trending=[
+
+["꧁༺ Dark King ༻꧂","🎮 Free Fire"],
+["『 Viral King 』","📘 Facebook"],
+["𓆩 Dream Boy 𓆪","📸 Instagram"],
+["★彡 Crazy Boy 彡★","🎵 TikTok"],
+["亗 Shadow 亗","🎮 Free Fire"],
+["♡ Alone Boy ♡","📘 Facebook"],
+["𓆩 Night King 𓆪","📸 Instagram"],
+["🔥 Devil King 🔥","🎵 TikTok"],
+["♛ Royal King ♛","🎮 Free Fire"],
+["✨ Silent Boy ✨","📸 Instagram"]
+
+];
+
+let trendIndex=0;
+
+setInterval(()=>{
+
+document
+.getElementById("autoName")
+.innerText=
+trending[trendIndex][0];
+
+document
+.getElementById("autoCategory")
+.innerText=
+trending[trendIndex][1];
+
+trendIndex++;
+
+if(
+trendIndex>=trending.length
+){
+
+trendIndex=0;
+
+}
+
+},2000);
+
+
+/* START */
+
+renderFavorites();
+
+console.log(
+"StyleName Step 27 Loaded"
+);
+
+console.log(
+"All Styles:",
+styles.all.length
+);
+
+console.log(
+"Free Fire:",
+styles.freefire.length
+);
+
+console.log(
+"Facebook:",
+styles.facebook.length
+);
+
+console.log(
+"Instagram:",
+styles.instagram.length
+);
+
+console.log(
+"TikTok:",
+styles.tiktok.length
+);
+
 </script>
+
 </body>
-</html>
+  </html>
