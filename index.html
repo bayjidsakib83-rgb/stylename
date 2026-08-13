@@ -1009,6 +1009,75 @@ html {
 .name-mode button{flex:1;border:1px solid #e5e7eb;background:#fff;color:#555;padding:9px;border-radius:9px;cursor:pointer;font-weight:700;font-size:12px}
 .name-mode button.active{background:#1677ff;color:#fff;border-color:#1677ff}
 
+
+/* STEP 11 - About & FAQ */
+.info-section{
+    width:94%;
+    max-width:900px;
+    margin:32px auto 0;
+}
+.info-card{
+    background:#fff;
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:14px;
+    box-shadow:0 5px 20px rgba(30,100,180,.06);
+}
+.info-card h2{
+    margin:0 0 9px;
+    font-size:19px;
+}
+.info-card p{
+    margin:0;
+    line-height:1.7;
+    font-size:13px;
+    color:#555;
+}
+.faq-item{
+    border:1px solid #e8edf3;
+    border-radius:11px;
+    margin-top:9px;
+    overflow:hidden;
+}
+.faq-question{
+    width:100%;
+    border:0;
+    background:#fff;
+    padding:13px 14px;
+    text-align:left;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+}
+.faq-answer{
+    display:none;
+    padding:0 14px 14px;
+    font-size:12px;
+    line-height:1.65;
+    color:#666;
+}
+.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-arrow{transition:transform .2s}
+
+
+/* STEP 12 - PERFORMANCE */
+html{scroll-behavior:smooth}
+img{max-width:100%;height:auto}
+button{touch-action:manipulation}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+
 </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Cpath d='M17 19h30v9H26v7h17v8H26v11h-9z' fill='white'/%3E%3Ccircle cx='48' cy='46' r='6' fill='%23a855f7'/%3E%3C/svg%3E">
 
@@ -1157,6 +1226,7 @@ onclick="changeCategory('tiktok',this)">
   <button type="button" id="englishMode" class="active" onclick="setNameMode('en')">English</button>
   <button type="button" id="banglaMode" onclick="setNameMode('bn')">বাংলা</button>
 </div>
+<div id="nameModeHint" style="font-size:11px;opacity:.65;margin:-6px 0 10px">বাংলা মোডে নামের চারপাশে বাংলা-বন্ধুত্বপূর্ণ stylish symbols ব্যবহার হবে।</div>
 <input
 id="nameInput"
 placeholder="Enter your name..."
@@ -1336,6 +1406,46 @@ Copy and save your favorite names easily.
 <div class="toast" id="toast">
 Done ✓
 </div>
+
+
+<section class="info-section" aria-label="About and frequently asked questions">
+  <div class="info-card">
+    <h2>ℹ️ About StyleName</h2>
+    <p>StyleName is a stylish name generator for Free Fire, Facebook, Instagram, TikTok and gaming profiles. Enter an English or বাংলা name, choose a style, then generate, copy, save or share your favorite result.</p>
+  </div>
+
+  <div class="info-card">
+    <h2>❓ Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" onclick="toggleFaq(this)">
+        <span>How do I create a stylish name?</span><span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">Enter your name, choose a style, and press Generate. You can then copy or save the result.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" onclick="toggleFaq(this)">
+        <span>বাংলা নাম কি ব্যবহার করা যাবে?</span><span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">হ্যাঁ। বাংলা mode নির্বাচন করে আপনার বাংলা নাম লিখে Generate চাপুন।</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" onclick="toggleFaq(this)">
+        <span>Where are my favorite names saved?</span><span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">Your favorites are saved locally in your browser, so they can remain available on the same browser unless its site data is cleared.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" onclick="toggleFaq(this)">
+        <span>Can I share a generated name?</span><span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer">Yes. Use the Share button when available. If your browser does not support sharing, the site can use its copy fallback.</div>
+    </div>
+  </div>
+</section>
 
 <footer>
 
@@ -1972,7 +2082,9 @@ document
 titles[currentCategory];
 
 let list=
-styles[currentCategory];
+nameMode==="bn"
+?banglaStyles
+:styles[currentCategory];
 
 let limited=
 list.slice(0,styleLimit);
@@ -2024,7 +2136,7 @@ return;
 }
 
 let total=
-styles[currentCategory].length;
+nameMode==="bn"?banglaStyles.length:styles[currentCategory].length;
 
 if(styleLimit>=total){
 
@@ -2291,10 +2403,12 @@ document
 
 function randomName(){
 
+let pool=nameMode==="bn"?banglaRandomNames:randomNames;
+
 let name=
-randomNames[
+pool[
 Math.floor(
-Math.random()*randomNames.length
+Math.random()*pool.length
 )
 ];
 
@@ -2627,15 +2741,51 @@ styles.tiktok.length
 
 /* STEP 10 - language mode */
 let nameMode=localStorage.getItem("stylenameNameMode")||"en";
+
+const banglaStyles=[
+"꧁༺ {NAME} ༻꧂","亗 {NAME} 亗","『 {NAME} 』","乂 {NAME} 乂",
+"★彡 {NAME} 彡★","꧁{NAME}꧂","༺ {NAME} ༻","◥ {NAME} ◤",
+"♛ {NAME} ♛","✿ {NAME} ✿","❖ {NAME} ❖","ツ {NAME} ツ",
+"☠ {NAME} ☠","⚡ {NAME} ⚡","♡ {NAME} ♡","『ঐ {NAME} ঐ』",
+"╰☆☆ {NAME} ☆☆╮","༒ {NAME} ༒","✧ {NAME} ✧","♚ {NAME} ♚"
+];
+
+const banglaRandomNames=[
+"রিফাত","সাকিব","রায়হান","তানভীর","নাঈম","আরিফ",
+"শাকিল","হাসান","রাকিব","জাহিদ","সুমন","নিলয়"
+];
+
 function setNameMode(mode){
  nameMode=mode==="bn"?"bn":"en";
  localStorage.setItem("stylenameNameMode",nameMode);
  document.getElementById("englishMode")?.classList.toggle("active",nameMode==="en");
  document.getElementById("banglaMode")?.classList.toggle("active",nameMode==="bn");
  const input=document.getElementById("nameInput");
- if(input) input.placeholder=nameMode==="bn"?"বাংলা নাম লিখুন...":"Enter your name...";
+ if(input){
+   input.placeholder=nameMode==="bn"?"বাংলা নাম লিখুন...":"Enter your name...";
+   const hint=document.getElementById("nameModeHint");
+   if(hint) hint.textContent=nameMode==="bn"?"বাংলা মোড: নামের সাথে stylish symbols যোগ হবে।":"English mode: generate all available English styles.";
+ }
 }
+
 setNameMode(nameMode);
+
+
+/* STEP 11 - FAQ interaction */
+function toggleFaq(button){
+    const item=button.closest(".faq-item");
+    if(!item) return;
+    item.classList.toggle("open");
+}
+
+
+/* STEP 12 - lightweight performance helpers */
+(function(){
+  const run = window.requestIdleCallback || function(cb){setTimeout(cb,120)};
+  run(function(){
+    document.documentElement.classList.add("page-ready");
+  });
+})();
 
 </script>
 
