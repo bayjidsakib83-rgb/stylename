@@ -641,6 +641,237 @@ footer{
         padding:14px 5px;
     }
 }
+
+/* =========================
+   STEP 3 - RESPONSIVE DESIGN
+   ========================= */
+
+/* Better focus and tap experience */
+button, input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline:3px solid rgba(22,119,255,.22);
+    outline-offset:2px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior:smooth;
+}
+
+/* Larger screens */
+@media (min-width:700px){
+
+    header{
+        height:70px;
+        padding:0 32px;
+    }
+
+    .hero{
+        padding:55px 20px 28px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .showcase,
+    .categories,
+    .container{
+        max-width:900px;
+    }
+
+    .showcase{
+        padding:25px 20px;
+    }
+
+    .auto-name{
+        font-size:25px;
+    }
+
+    .categories{
+        gap:9px;
+        justify-content:center;
+        overflow-x:visible;
+        flex-wrap:wrap;
+    }
+
+    .category{
+        padding:10px 16px;
+        font-size:13px;
+    }
+
+    .container{
+        margin-top:22px;
+    }
+
+    .generator{
+        padding:26px;
+    }
+
+    .generator h2{
+        font-size:21px;
+    }
+
+    input{
+        padding:15px;
+        font-size:15px;
+    }
+
+    .button-row{
+        gap:12px;
+    }
+
+    .generate,
+    .random-btn{
+        padding:15px;
+        font-size:14px;
+    }
+
+    .extra-buttons{
+        gap:10px;
+    }
+
+    .extra-btn{
+        padding:12px;
+        font-size:12px;
+    }
+
+    .library-grid{
+        grid-template-columns:repeat(4,1fr);
+        gap:12px;
+    }
+
+    .library-card{
+        padding:18px;
+    }
+
+    .features{
+        max-width:900px;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        margin-top:55px;
+    }
+
+    .feature{
+        padding:24px 15px;
+    }
+
+    .feature-icon{
+        font-size:28px;
+    }
+
+    .feature h3{
+        font-size:15px;
+    }
+
+    .feature p{
+        font-size:12px;
+    }
+
+    .about{
+        max-width:900px;
+        padding:30px;
+    }
+
+    footer{
+        padding:35px 20px;
+    }
+}
+
+/* Small phones */
+@media (max-width:380px){
+
+    header{
+        padding:0 12px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .logo-icon{
+        width:32px;
+        height:32px;
+    }
+
+    .hero{
+        padding-top:28px;
+    }
+
+    .hero h1{
+        font-size:23px;
+    }
+
+    .showcase,
+    .categories,
+    .container,
+    .features,
+    .about{
+        width:96%;
+    }
+
+    .generator{
+        padding:15px;
+    }
+
+    .button-row{
+        grid-template-columns:1fr;
+    }
+
+    .extra-buttons{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .extra-btn{
+        font-size:10px;
+        padding:9px 3px;
+    }
+
+    .name-box{
+        padding:10px;
+    }
+
+    .name{
+        font-size:14px;
+    }
+
+    .copy,
+    .favorite{
+        padding:7px 8px;
+    }
+
+    .library-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+}
+
 </style>
 </head>
 
@@ -2223,4 +2454,4 @@ styles.tiktok.length
 </script>
 
 </body>
-  </html>
+    </html>
