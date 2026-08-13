@@ -601,6 +601,121 @@ footer{
     margin-bottom:6px;
 }
 
+
+/* STEP 6 - RECENT NAMES */
+let recentNames =
+    JSON.parse(localStorage.getItem("stylenameRecentNames")) || [];
+
+function saveRecentName(name){
+    name = String(name).trim();
+    if(!name) return;
+
+    recentNames = recentNames.filter(item => item !== name);
+    recentNames.unshift(name);
+    recentNames = recentNames.slice(0, 10);
+
+    localStorage.setItem(
+        "stylenameRecentNames",
+        JSON.stringify(recentNames)
+    );
+
+    renderRecent();
+}
+
+function renderRecent(){
+    const section = document.getElementById("recentSection");
+    const list = document.getElementById("recentList");
+
+    if(!section || !list) return;
+
+    if(!recentNames.length){
+        section.classList.remove("show");
+        list.innerHTML="";
+        return;
+    }
+
+    section.classList.add("show");
+    list.innerHTML="";
+
+    recentNames.forEach(name=>{
+        const item=document.createElement("div");
+        item.className="recent-item";
+
+        const nameEl=document.createElement("div");
+        nameEl.className="recent-name";
+        nameEl.textContent=name;
+
+        const useBtn=document.createElement("button");
+        useBtn.className="recent-use";
+        useBtn.type="button";
+        useBtn.textContent="Use";
+        useBtn.onclick=function(){
+            document.getElementById("nameInput").value=name;
+            generate();
+        };
+
+        item.appendChild(nameEl);
+        item.appendChild(useBtn);
+        list.appendChild(item);
+    });
+}
+
+function clearRecent(){
+    recentNames=[];
+    localStorage.removeItem("stylenameRecentNames");
+    renderRecent();
+    showToast("Recent names cleared");
+}
+
+function showRecentMenu(){
+    closeMenu();
+
+    const section=document.getElementById("recentSection");
+    if(!section) return;
+
+    if(!recentNames.length){
+        showToast("No recent names yet");
+        return;
+    }
+
+    section.classList.add("show");
+    section.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+}
+
+async function shareName(text){
+    try{
+        if(navigator.share){
+            await navigator.share({
+                title:"StyleName",
+                text:text,
+                url:window.location.href
+            });
+            showToast("Shared successfully!");
+            return;
+        }
+
+        const copied=await copyText(text);
+        showToast(
+            copied
+            ? "Sharing not supported — name copied!"
+            : "Sharing not supported on this browser"
+        );
+    }catch(error){
+        if(error && error.name==="AbortError") return;
+
+        const copied=await copyText(text);
+        showToast(
+            copied
+            ? "Share cancelled — name copied!"
+            : "Could not share this name"
+        );
+    }
+}
+
+
 /* TOAST */
 
 .toast{
@@ -888,33 +1003,12 @@ html {
 .seo-intro p{font-size:13px;margin:0;opacity:.82}
 
 
-/* STEP 5 - StyleName branding */
-.brand-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:10px;
-    padding:6px 11px;
-    border:1px solid rgba(168,85,247,.28);
-    border-radius:999px;
-    background:rgba(168,85,247,.08);
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.2px;
-}
-.brand-dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#a855f7;
-    box-shadow:0 0 12px rgba(168,85,247,.65);
-}
-
 </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Cpath d='M17 19h30v9H26v7h17v8H26v11h-9z' fill='white'/%3E%3Ccircle cx='48' cy='46' r='6' fill='%23a855f7'/%3E%3C/svg%3E">
 
     <meta name="application-name" content="StyleName">
     <meta property="og:site_name" content="StyleName">
+    <link rel="canonical" href="https://bayjidsakib83-rgb.github.io/stylename/">
 </head>
 
 <body>
@@ -971,6 +1065,11 @@ TikTok Names
 My Favorites
 </button>
 
+<button class="menu-item" onclick="showRecentMenu()">
+<div class="menu-icon">🕘</div>
+Recent Names
+</button>
+
 <button class="menu-item" onclick="showAbout()">
 <div class="menu-icon">ℹ️</div>
 About StyleName
@@ -980,7 +1079,6 @@ About StyleName
 
 <section class="hero" id="home">
 
-<div class="brand-badge"><span class="brand-dot"></span> StyleName</div>
 <h1>
 Stylish <span>Name</span>
 </h1>
@@ -1179,6 +1277,14 @@ Clear All
 
 <div id="favoriteList"></div>
 
+</div>
+
+<div class="recent" id="recentSection">
+<div class="recent-head">
+<h2>🕘 Recent Names</h2>
+<button class="clear-recent" onclick="clearRecent()">Clear</button>
+</div>
+<div id="recentList"></div>
 </div>
 
 </div>
@@ -1825,6 +1931,8 @@ generateForName(name);
 
 function generateForName(name){
 
+saveRecentName(name);
+
 let results=
 document.getElementById("results");
 
@@ -2311,6 +2419,12 @@ box
 .onclick=async function(){
 const copied=await copyText(text);
 showToast(copied ? "Name copied!" : "Copy failed — please copy manually");
+};
+
+box
+.querySelector(".share")
+.onclick=async function(){
+    await shareName(text);
 };
 
 box
