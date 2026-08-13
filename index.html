@@ -1004,12 +1004,6 @@ html {
 
 
 
-/* STEP 10 - Bangla / English mode */
-.name-mode{display:flex;gap:8px;margin:0 0 12px}
-.name-mode button{flex:1;border:1px solid #e5e7eb;background:#fff;color:#555;padding:9px;border-radius:9px;cursor:pointer;font-weight:700;font-size:12px}
-.name-mode button.active{background:#1677ff;color:#fff;border-color:#1677ff}
-
-
 /* STEP 11 - About & FAQ */
 .info-section{
     width:94%;
@@ -1077,6 +1071,7 @@ button{touch-action:manipulation}
     scroll-behavior:auto!important;
   }
 }
+
 
 </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Cpath d='M17 19h30v9H26v7h17v8H26v11h-9z' fill='white'/%3E%3Ccircle cx='48' cy='46' r='6' fill='%23a855f7'/%3E%3C/svg%3E">
@@ -1222,10 +1217,6 @@ onclick="changeCategory('tiktok',this)">
 <h2>✨ Name Generator</h2>
 
 
-<div class="name-mode" aria-label="Name language">
-  <button type="button" id="englishMode" class="active" onclick="setNameMode('en')">English</button>
-  <button type="button" id="banglaMode" onclick="setNameMode('bn')">বাংলা</button>
-</div>
 <div id="nameModeHint" style="font-size:11px;opacity:.65;margin:-6px 0 10px">বাংলা মোডে নামের চারপাশে বাংলা-বন্ধুত্বপূর্ণ stylish symbols ব্যবহার হবে।</div>
 <input
 id="nameInput"
@@ -2739,38 +2730,6 @@ styles.tiktok.length
 );
 
 
-/* STEP 10 - language mode */
-let nameMode=localStorage.getItem("stylenameNameMode")||"en";
-
-const banglaStyles=[
-"꧁༺ {NAME} ༻꧂","亗 {NAME} 亗","『 {NAME} 』","乂 {NAME} 乂",
-"★彡 {NAME} 彡★","꧁{NAME}꧂","༺ {NAME} ༻","◥ {NAME} ◤",
-"♛ {NAME} ♛","✿ {NAME} ✿","❖ {NAME} ❖","ツ {NAME} ツ",
-"☠ {NAME} ☠","⚡ {NAME} ⚡","♡ {NAME} ♡","『ঐ {NAME} ঐ』",
-"╰☆☆ {NAME} ☆☆╮","༒ {NAME} ༒","✧ {NAME} ✧","♚ {NAME} ♚"
-];
-
-const banglaRandomNames=[
-"রিফাত","সাকিব","রায়হান","তানভীর","নাঈম","আরিফ",
-"শাকিল","হাসান","রাকিব","জাহিদ","সুমন","নিলয়"
-];
-
-function setNameMode(mode){
- nameMode=mode==="bn"?"bn":"en";
- localStorage.setItem("stylenameNameMode",nameMode);
- document.getElementById("englishMode")?.classList.toggle("active",nameMode==="en");
- document.getElementById("banglaMode")?.classList.toggle("active",nameMode==="bn");
- const input=document.getElementById("nameInput");
- if(input){
-   input.placeholder=nameMode==="bn"?"বাংলা নাম লিখুন...":"Enter your name...";
-   const hint=document.getElementById("nameModeHint");
-   if(hint) hint.textContent=nameMode==="bn"?"বাংলা মোড: নামের সাথে stylish symbols যোগ হবে।":"English mode: generate all available English styles.";
- }
-}
-
-setNameMode(nameMode);
-
-
 /* STEP 11 - FAQ interaction */
 function toggleFaq(button){
     const item=button.closest(".faq-item");
@@ -2786,6 +2745,7 @@ function toggleFaq(button){
     document.documentElement.classList.add("page-ready");
   });
 })();
+
 
 </script>
 
