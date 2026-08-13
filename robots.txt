@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bayjidsakib83-rgb.github.io/stylename/sitemap.xml
